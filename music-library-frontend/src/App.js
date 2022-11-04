@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Logo from "./components/Logo/Logo";
-import "./App.css";
+// import "./App.css";
 import axios from 'axios';
+import MusicTable from './components/MusicTable/MusicTable';
+import AddSong from './components/Buttons/AddSong/AddSong';
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
   return (
     <div>
       <Logo />
+      <AddSong />
+      <MusicTable entries={songs}/>
     </div>
   );
 }
