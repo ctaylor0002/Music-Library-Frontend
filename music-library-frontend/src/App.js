@@ -20,6 +20,15 @@ function App() {
     setSongs(response.data);
   }
 
+  async function addSong(data) {
+    const response = await axios.post('http://127.0.0.1:8000/music/', data);
+    console.log(response.data);
+    // setSongs(getAllSongs())
+
+    let tempSongs = [...songs, data];
+    setSongs(tempSongs);
+  }
+
   // function addNewSong(song) {
     
   //   let tempSongs = [...songs, song];
@@ -31,10 +40,10 @@ function App() {
   return (
     <div>
       <Logo />
-      <AddSong />
+      <AddSong addSong={addSong} />
       <MusicTable entries={songs}/>
     </div>
   );
 }
-
+  
 export default App;
