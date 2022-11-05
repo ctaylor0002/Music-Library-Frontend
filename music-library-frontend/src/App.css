@@ -1,3 +1,8 @@
-body {
-    background-color: rgb(63, 62, 62);
+/* body {
+    background-color: rgb(32, 33, 36);
+} */
+
+.container-fluid {
+    display: flex;
+    flex-direction: row;
 }

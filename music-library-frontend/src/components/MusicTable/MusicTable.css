@@ -1,0 +1,19 @@
+.library {
+    margin-top: 150px;
+    width: 60rem;
+    padding-left: 200px;
+}
+
+img {
+    width: 40px;
+}
+
+tr {
+    color: white;
+}
+
+.table-hover tbody tr:hover td {
+    background:rgb(109, 111, 111);
+}
+
+

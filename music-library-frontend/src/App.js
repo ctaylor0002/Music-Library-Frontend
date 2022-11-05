@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Logo from "./components/Logo/Logo";
-// import "./App.css";
+import "./App.css";
 import axios from 'axios';
 import MusicTable from './components/MusicTable/MusicTable';
 import AddSong from './components/Buttons/AddSong/AddSong';
@@ -32,6 +32,7 @@ function App() {
     console.log(data)
     const response = await axios.patch(`http://127.0.0.1:8000/music/${id}/`, { likes : data } )
     console.log(response.data);
+    getAllSongs();
   
   }
 
@@ -47,9 +48,16 @@ function App() {
   return (
     <div>
       <Logo />
-      <AddSong addSong={addSong} />
-      <MusicTable entries={songs} getAllSongs={getAllSongs}  likeSong={likeSong}/>
-      {/* <SearchBar entries={songs} /> */}
+      <div className='container-fluid'>
+        <div className='col-md-2'>
+          <AddSong addSong={addSong} />
+        </div>
+        <div className='col-md-auto'>
+          <div className='border-box'>
+            <MusicTable entries={songs} getAllSongs={getAllSongs}  likeSong={likeSong}/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LikeButton from '../Buttons/LikeButton/LikeButton';
+import './MusicTable.css'
 
 const MusicTable = (props) => {
 
@@ -7,21 +8,23 @@ const MusicTable = (props) => {
         
         
         return (
-            <div>
+            <div className='library'>
                 <div>
                     <input type='text' placeholder='Search...'  onChange={(event) => {setSearchTerm(event.target.value)}}/>
                 </div>
-                <table>
-                    <tr>
-                        <th>Song</th>
-                        <th>Artist</th>
-                        <th>Album</th>
-                        <th>Release Date</th>
-                        <th>Likes</th>
-                    </tr>
-                    
+                <table className='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope='col'>Song</th>
+                            <th scope='col'>Artist</th>
+                            <th scope='col'>Album</th>
+                            <th scope='col'>Release Date</th>
+                            <th scope='col'>Likes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     {props.entries.filter((song) => {
-                        if (searchTerm == "") {
+                        if (searchTerm ==="") {
                             return song;
                         } else if (song.title.toLowerCase().includes(searchTerm.toLowerCase())) {
                             return song;
@@ -47,6 +50,7 @@ const MusicTable = (props) => {
                             </tr>
                         )
                     })}
+                    </tbody>
                 </table>
             
             </div>
