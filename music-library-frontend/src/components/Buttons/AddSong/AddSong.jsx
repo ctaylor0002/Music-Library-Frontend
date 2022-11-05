@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 const AddSong = (props) => {
 
-    const [songName, setSongName] = useState()
-    const [artist, setArtist] = useState()
-    const [album, setAlbum] = useState()
-    const [releaseDate, setReleaseDate] = useState()
-    const [genre, setGenre] = useState()
+    const [songName, setSongName] = useState('')
+    const [artist, setArtist] = useState('')
+    const [album, setAlbum] = useState('')
+    const [releaseDate, setReleaseDate] = useState('')
+    const [genre, setGenre] = useState('')
     
     function handleSubmit(event) {
         event.preventDefault();
@@ -19,6 +19,12 @@ const AddSong = (props) => {
             genre: genre,
             likes: 0
         };
+
+        setSongName('');
+        setArtist('');
+        setAlbum('');
+        setReleaseDate('');
+        setGenre('');
 
         console.log(newSong);
         props.addSong(newSong);

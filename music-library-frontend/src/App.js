@@ -5,7 +5,6 @@ import axios from 'axios';
 import MusicTable from './components/MusicTable/MusicTable';
 import AddSong from './components/Buttons/AddSong/AddSong';
 
-
 function App() {
 
   const [songs, setSongs] = useState([])
@@ -42,6 +41,7 @@ function App() {
       <Logo />
       <AddSong addSong={addSong} />
       <MusicTable entries={songs}/>
+      {/* <SearchBar entries={songs} /> */}
     </div>
   );
 }
