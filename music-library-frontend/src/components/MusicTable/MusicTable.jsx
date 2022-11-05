@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LikeButton from '../Buttons/LikeButton/LikeButton';
 
 const MusicTable = (props) => {
 
@@ -41,6 +42,7 @@ const MusicTable = (props) => {
                                 <td>{song.album}</td>
                                 <td>{song.release_date}</td>
                                 <td>{song.likes}</td>
+                                <td><LikeButton id={song.id} likeSong={props.likeSong}/></td>
                             </tr>
                         )
                     })}

@@ -28,6 +28,14 @@ function App() {
     setSongs(tempSongs);
   }
 
+  async function likeSong(id, data) {
+    const response = await axios.patch('http://127.0.0.1:8000/music/')
+    console.log(response.data);
+
+    
+  
+  }
+
   // function addNewSong(song) {
     
   //   let tempSongs = [...songs, song];
@@ -40,7 +48,7 @@ function App() {
     <div>
       <Logo />
       <AddSong addSong={addSong} />
-      <MusicTable entries={songs}/>
+      <MusicTable entries={songs} />
       {/* <SearchBar entries={songs} /> */}
     </div>
   );
