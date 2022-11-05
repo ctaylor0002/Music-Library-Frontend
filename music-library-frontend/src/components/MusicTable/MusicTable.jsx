@@ -5,6 +5,7 @@ const MusicTable = (props) => {
 
         const [searchTerm, setSearchTerm] = useState("");
         
+        
         return (
             <div>
                 <div>
@@ -42,7 +43,7 @@ const MusicTable = (props) => {
                                 <td>{song.album}</td>
                                 <td>{song.release_date}</td>
                                 <td>{song.likes}</td>
-                                <td><LikeButton id={song.id} likeSong={props.likeSong}/></td>
+                                <td><LikeButton id={song.id} getAllSongs={props.getAllSongs} likeSong={props.likeSong} /></td>
                             </tr>
                         )
                     })}

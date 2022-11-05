@@ -29,12 +29,12 @@ function App() {
   }
 
   async function likeSong(id, data) {
-    const response = await axios.patch('http://127.0.0.1:8000/music/')
+    console.log(data)
+    const response = await axios.patch(`http://127.0.0.1:8000/music/${id}/`, { likes : data } )
     console.log(response.data);
-
-    
   
   }
+
 
   // function addNewSong(song) {
     
@@ -48,7 +48,7 @@ function App() {
     <div>
       <Logo />
       <AddSong addSong={addSong} />
-      <MusicTable entries={songs} />
+      <MusicTable entries={songs} getAllSongs={getAllSongs}  likeSong={likeSong}/>
       {/* <SearchBar entries={songs} /> */}
     </div>
   );
