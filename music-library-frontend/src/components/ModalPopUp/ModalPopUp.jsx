@@ -29,6 +29,16 @@ const ModalPopUp = (props) => {
       
     }
 
+    function handleDelete(event) {
+        event.preventDefault();
+        deleteSong(props.songValue.id)
+    }
+    async function deleteSong(id) {
+        const response = await axios.delete(`http://127.0.0.1:8000/music/${id}/`)
+        props.closeModal(false);
+        props.getAllSongs();
+    }
+
     return ( 
         <div className='modal-background'>
             <div className='modal-container'>
@@ -77,7 +87,12 @@ const ModalPopUp = (props) => {
                     <button type='submit'>Update Song</button>
                 </div>
                 </form>
-                    <button type='submit'>Delete Song</button>
+                
+                <form onSubmit={handleDelete}>
+                    <div className='footer'>
+                        <button type='submit'>Delete Song</button>
+                    </div>
+                </form>
                 
             </div>
         </div>
