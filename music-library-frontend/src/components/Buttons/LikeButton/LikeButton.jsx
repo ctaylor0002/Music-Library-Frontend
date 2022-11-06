@@ -27,7 +27,7 @@ const LikeButton = (props) => {
     }
 
     return ( 
-        <img src={likeImage}  onClick={likeButtonCall}/>
+        <img className='jump-shake'src={likeImage}  onClick={likeButtonCall}/>
      );
 }
  

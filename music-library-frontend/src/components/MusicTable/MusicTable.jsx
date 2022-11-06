@@ -52,15 +52,17 @@ const MusicTable = (props) => {
                         
                     }).map((song) => {
                         return(
-                            <tr onClick={() => {openModalPopUp(song)}}>
-                                <td>{song.title}</td>
-                                <td>{song.artist}</td>
-                                <td>{song.album}</td>
-                                <td>{song.release_date}</td>
-                                <td>{song.likes}</td>
+                            <tr>
+                                <td onClick={() => {openModalPopUp(song)}}>{song.title}</td>
+                                <td onClick={() => {openModalPopUp(song)}}>{song.artist}</td>
+                                <td onClick={() => {openModalPopUp(song)}}>{song.album}</td>
+                                <td onClick={() => {openModalPopUp(song)}}>{song.release_date}</td>
+                                <td onClick={() => {openModalPopUp(song)}}>{song.likes}</td>
+                            
                                 <td><LikeButton id={song.id} getAllSongs={props.getAllSongs} likeSong={props.likeSong} /></td>
                                 
                             </tr>
+                            
                         )
                     })}
                     </tbody>
