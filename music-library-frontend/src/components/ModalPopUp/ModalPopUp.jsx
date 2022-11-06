@@ -31,6 +31,7 @@ const ModalPopUp = (props) => {
 
     function handleDelete(event) {
         event.preventDefault();
+        console.log(props.songValue.id)
         deleteSong(props.songValue.id)
     }
     async function deleteSong(id) {
